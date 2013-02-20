@@ -1,0 +1,44 @@
+<!DOCTYPE hmtl>
+<html>
+	<head>
+		<title>FOOD STAR &#9733; &#174;</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <!-- Bootstrap -->
+        <link rel = "stylesheet" type="text/css" href="/static/czed_bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/style.css"	>
+	</head>
+	
+	<body>
+		<div id="content">
+			{% block body %} {% endblock %}
+		</div>
+		<div id="nav">
+			Navigation:<br />
+			<ul>
+				{% block nav %} {% endblock %}
+				<li><a href ="{{url_for('main')}}">Index</a></li>
+				<li><a href ="/about/">About</a></li>
+				<li><a href ="/contact/">Contact</a></li>
+				<hr id ="nav"/>
+				{% if 'username' in session %}
+				<li><a href="{{url_for('remote')}}">Remote Control</a></li>
+				<li><a href="{{url_for('music')}}">Music</a></li>
+				<li><a href ="{{url_for('login')}}">Logout</a>
+				{% else %}
+				<li><a href ="{{url_for('login')}}">Login</a>
+				{% endif %}
+			</ul>
+		</div>
+		<div id = "flashed">
+		{% with messages = get_flashed_messages() %}
+		{% for message in messages %}
+			{{message}}
+		{% endfor %}
+		{% endwith %}
+		</div>
+		<!--script src="http://code.jquery.com/jquery-latest.js"></script-->
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	    <script src="/static/czed_bootstrap/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block body %}
+
+		<div class = "container">
+			<div class = "hero-unit">
+				<h1>Welcome to Food &#9733; </h1>
+				<p> You feed the system and the system feeds you. Smartly. &#9786; </p>
+				<p><a class = "btn btn-primary btn-large">Get Started &raquo; </a></p>
+			</div><!-- .hero-unit -->
+
+		<div class = "row">
+
+			<div class = "span4">
+				<h2> Recipe Suggestions</h2>
+				<p>You bought shrimp on Saturday. You also have avacado's. Check out one of our suggestions:</p>
+				<p><a href="http://www.allrecipes.com/Recipe/Avocado-Shrimp-Salad/Detail.aspx"> Eg: Avacado Shrimp Salad </a></p>
+				<p> Feed the system with your regulars, make your grocery lists and the system grows with you.</p>
+				<p><a class ="btn" href="http://www.allrecipes.com/Recipe/Avocado-Shrimp-Salad/Detail.aspx"> Click meeeee &raquo;</a></p>
+			</div><!-- .span4 -->
+
+			<div class ="span4"> 
+				<h2> Smart Lists</h2>
+				<p><a href="http://www.any.do">Lists Like This</a></p>
+				<p> You feed the list a few times and it starts feeding itself and you too. Check it out. </p>
+				<p><a class ="btn" href="http://www.any.do"> List Up! &raquo;</a></p>
+			</div><!-- .span4 -->
+
+			<div class ="span4"> 
+				<h2> Friendly Reminders</h2>
+				<p>One place to get it all organized.</p>
+				<p><a class ="btn" href="#"> Set Reminders &raquo;</a></p>
+			</div><!-- .span4 -->
+
+			
+
+		</div>
+
+{% endblock %}
+{% block nav %}
+<li><a href="{{url_for('login')}}">Back</a></li>
+{% endblock %}
